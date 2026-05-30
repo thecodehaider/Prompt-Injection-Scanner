@@ -2,7 +2,7 @@
 
 <br/>
 
-<img src="https://decodesfuture.com/images/og-image.png" alt="Prompt Injection Scanner" width="100%"/>
+<img src="https://decodesfuture.comog-prompt-injection-scanner.svg" alt="Prompt Injection Scanner" width="100%"/>
 
 <br/><br/>
 
