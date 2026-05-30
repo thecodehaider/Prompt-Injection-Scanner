@@ -1,0 +1,48 @@
+name: "💡 Feature Request"
+description: "Suggest a new detection rule, API feature, or improvement"
+title: "[FEATURE] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Got an idea for a new attack vector to detect, a new API capability, or a workflow improvement?
+        We review all suggestions. The best ones get prioritized on our roadmap.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: "Feature summary"
+      description: "What would you like us to add or improve?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: usecase
+    attributes:
+      label: "Use case"
+      description: "Describe the real-world scenario or security threat this would address."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Alternatives considered"
+      description: "Any workarounds you've tried?"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: "Area"
+      options:
+        - New attack vector / detection rule
+        - API capability
+        - Dashboard / reporting
+        - MCP auditor
+        - White-label / enterprise feature
+        - Other
+    validations:
+      required: true
