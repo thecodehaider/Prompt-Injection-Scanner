@@ -69,7 +69,7 @@ Your System Prompt
         ▼
 ┌─────────────────────────────────────────┐
 │  LAYER 1: HEURISTIC FIREWALL            │
-│  Rebuff-style regex pattern engine      │
+│  Pattern recognition engine             │
 │  Instant detection, 0 token cost        │
 │  Catches: override, leak, jailbreak,    │
 │  DAN, output hijack, exfiltration       │
@@ -78,7 +78,7 @@ Your System Prompt
                ▼
 ┌─────────────────────────────────────────┐
 │  LAYER 2: AI RED-TEAM AUDIT ENGINE      │
-│  SENTINEL-1 (gpt-oss-120b powered)      │
+│  SENTINEL-1 Security Audit Engine       │
 │  Full structural deconstruction         │
 │  10-class adversarial threat modeling   │
 │  OWASP LLM Top 10 2025 mapping          │
@@ -368,11 +368,10 @@ The scanner's OWASP LLM Top 10 2025 mapping and real adversarial payload library
 
 ## Built On
 
-- **Scanning AI**: SENTINEL-1 audit system (gpt-oss-120b via Cerebras inference — ultra-fast, sub-5s full audit)
-- **Heuristic Engine**: Rebuff-inspired regex pattern classifier (zero-latency, zero-token-cost pre-filter)
-- **Framework**: Next.js 16, TypeScript, Supabase
-- **Auth & Billing**: Supabase Auth + Whop payments
+- **Scanning AI**: SENTINEL-1 — a proprietary multi-phase red-team audit engine. Sub-5s full audits.
+- **Heuristic Engine**: Proprietary pattern recognition classifier — zero-latency, zero-cost pre-filter
 - **Standards**: OWASP LLM Top 10 2025
+- **Infrastructure**: Fully managed cloud — no setup required
 
 ---
 
