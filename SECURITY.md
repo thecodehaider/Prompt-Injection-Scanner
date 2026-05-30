@@ -31,8 +31,8 @@ Instead, report privately via:
 ### Scope
 
 In-scope:
-- The REST API at `decodesfuture.com/api/v1/scan`
-- The web application at `decodesfuture.com`
+- The REST API at `www.decodesfuture.com/api/v1/scan`
+- The web application at `www.decodesfuture.com`
 - Authentication and authorization issues
 - Data exposure or leakage
 

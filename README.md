@@ -137,15 +137,16 @@ We audit against every category in the OWASP LLM Top 10 2025 standard — the de
 - Paste your MCP server's tool schema JSON
 - Detects poisoned tool descriptions, argument injection surfaces, excessive permission grants
 
-### 📊 Scan History & Regression Tracking *(Pro)*
+### 📊 Scan History & Cloud Sync *(Pro)*
 - Every scan saved to your secure history
 - Track prompt security across deployments
 - Compare hardened vs original scores
 - CI/CD-friendly webhook integration
 
-### 🏢 Multi-Model Benchmark *(Pro)*
-- Run your prompt against multiple LLM model profiles simultaneously
-- See which models are most resilient to your prompt's specific vulnerabilities
+### 🏢 Prompt Security Diff Scanner *(Pro)*
+- Compare two versions of a system prompt side-by-side
+- See vulnerability and security score changes in real-time
+- Categorize security improvements (fixed, new, and remaining vulnerabilities)
 
 ---
 
@@ -174,7 +175,7 @@ Integrate the scanner directly into your CI/CD pipelines, security testing suite
 ### Endpoint
 
 ```
-POST https://decodesfuture.com/api/v1/scan
+POST https://www.decodesfuture.com/api/v1/scan
 ```
 
 ### Authentication
@@ -228,7 +229,7 @@ Generate your API key at [decodesfuture.com/profile](https://decodesfuture.com/p
 ### cURL Example
 
 ```bash
-curl -X POST https://decodesfuture.com/api/v1/scan \
+curl -X POST https://www.decodesfuture.com/api/v1/scan \
   -H "x-api-key: YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"prompt": "You are a helpful assistant."}'
@@ -237,7 +238,7 @@ curl -X POST https://decodesfuture.com/api/v1/scan \
 ### JavaScript / Node.js
 
 ```js
-const response = await fetch('https://decodesfuture.com/api/v1/scan', {
+const response = await fetch('https://www.decodesfuture.com/api/v1/scan', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -257,7 +258,7 @@ console.log(`Findings: ${audit.findings.length}`);
 import requests
 
 response = requests.post(
-    'https://decodesfuture.com/api/v1/scan',
+    'https://www.decodesfuture.com/api/v1/scan',
     headers={
         'x-api-key': 'YOUR_API_KEY',
         'Content-Type': 'application/json'
@@ -304,7 +305,8 @@ For developers shipping LLM applications.
 - **Unlimited scans**
 - **Full attack simulation (20+ payloads)**
 - **Auto-hardened prompt output**
-- Scan history & regression tracking
+- Scan history & cloud sync
+- **Prompt Security Diff Scanner**
 - CI/CD webhook (1 endpoint)
 - MCP tool description scanner
 - API access (500 calls/month)
@@ -319,7 +321,7 @@ For security and engineering teams.
 - Up to 10 team members
 - Unlimited CI/CD webhooks
 - **Unlimited API calls**
-- Shared prompt library
+- Shared prompt & diff library
 - Slack alerts on scan failure
 - SOC 2 compliance report
 - Priority engineer support

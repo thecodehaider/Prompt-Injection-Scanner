@@ -2,9 +2,9 @@
 
 Complete reference for the Prompt Injection Scanner REST API.
 
-**Base URL**: `https://decodesfuture.com/api/v1`
+**Base URL**: `https://www.decodesfuture.com/api/v1`
 
-**[Get your API key →](https://decodesfuture.com/pricing)**
+**[Get your API key →](https://www.decodesfuture.com/pricing)**
 
 ---
 
@@ -16,7 +16,7 @@ All API requests require an API key passed in the request header:
 x-api-key: your_api_key_here
 ```
 
-Generate your key from your profile at [decodesfuture.com/profile](https://decodesfuture.com/profile) under the **API Gateway** tab. Requires a **Pro** or **Team** plan.
+Generate your key from your profile at [decodesfuture.com/profile](https://www.decodesfuture.com/profile) under the **API Gateway** tab. Requires a **Pro** or **Team** plan.
 
 ---
 
@@ -27,7 +27,7 @@ Runs a full prompt injection security audit on a given system prompt.
 ### Request
 
 **Method**: `POST`  
-**URL**: `https://decodesfuture.com/api/v1/scan`  
+**URL**: `https://www.decodesfuture.com/api/v1/scan`  
 **Content-Type**: `application/json`
 
 #### Body Parameters
@@ -39,7 +39,7 @@ Runs a full prompt injection security audit on a given system prompt.
 #### Example Request
 
 ```bash
-curl -X POST https://decodesfuture.com/api/v1/scan \
+curl -X POST https://www.decodesfuture.com/api/v1/scan \
   -H "x-api-key: dfx_live_xxxxxxxxxxxxxxxxxxxx" \
   -H "Content-Type: application/json" \
   -d '{"prompt": "You are a helpful AI assistant. Answer the user truthfully."}'
@@ -184,7 +184,7 @@ const fs = require('fs');
 async function auditPrompt(promptFile) {
   const prompt = fs.readFileSync(promptFile, 'utf-8');
 
-  const response = await fetch('https://decodesfuture.com/api/v1/scan', {
+  const response = await fetch('https://www.decodesfuture.com/api/v1/scan', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -233,7 +233,7 @@ RISK_THRESHOLD = 60  # Fail if score exceeds this
 
 def audit_prompt(prompt_text: str, name: str = "prompt") -> dict:
     response = requests.post(
-        'https://decodesfuture.com/api/v1/scan',
+        'https://www.decodesfuture.com/api/v1/scan',
         headers={
             'x-api-key': API_KEY,
             'Content-Type': 'application/json'
