@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+import fs from "fs";
+import path from "path";
 import { scanPromptLocal, scanPromptCloud } from "./index.js";
 
 const HELP_TEXT = `
@@ -18,10 +20,38 @@ Options:
 `;
 
 async function main() {
+  // Helper to load keys from local .env files
+  function loadLocalEnv() {
+    const envPath = path.join(process.cwd(), ".env");
+    if (fs.existsSync(envPath)) {
+      try {
+        const content = fs.readFileSync(envPath, "utf-8");
+        const lines = content.split(/\r?\n/);
+        for (const line of lines) {
+          const trimmed = line.trim();
+          if (trimmed && !trimmed.startsWith("#")) {
+            const firstEqual = trimmed.indexOf("=");
+            if (firstEqual !== -1) {
+              const key = trimmed.substring(0, firstEqual).trim();
+              const val = trimmed.substring(firstEqual + 1).trim();
+              const cleanVal = val.replace(/^["']|["']$/g, "");
+              if (key === "DECODES_API_KEY" || key === "DECODESFUTURE_API_KEY") {
+                process.env[key] = cleanVal;
+              }
+            }
+          }
+        }
+      } catch (e) {
+        // Silently skip if error reading local .env
+      }
+    }
+  }
+
+  loadLocalEnv();
   const args = process.argv.slice(2);
   let prompt = null;
   let useCloud = false;
-  let apiKey = process.env.DECODES_API_KEY;
+  let apiKey = process.env.DECODES_API_KEY || process.env.DECODESFUTURE_API_KEY;
   let host = "https://decodesfuture.com";
 
   for (let i = 0; i < args.length; i++) {
