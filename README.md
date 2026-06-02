@@ -34,37 +34,83 @@
 
 The **Prompt Injection Scanner** is a production-grade security auditing engine for LLM system prompts. It combines a fast heuristic firewall with a deep AI-powered red-team audit layer — all mapped to the **OWASP LLM Top 10 2025** framework.
 
-You paste your system prompt. We run it through 210+ adversarial attack probes, score it 0–100 for exploitability, surface every vulnerability with a OWASP category, generate real attack payloads crafted to break your specific prompt, and deliver a production-ready hardened rewrite.
-
-**No setup. No SDK. No dependencies.** Just visit → **[decodesfuture.com/tools/prompt-scanner](https://decodesfuture.com/tools/prompt-scanner)**
+This repository supports local heuristic scanning, programmatic SDK operations, and wraps our advanced developer tools: the **Model Context Protocol (MCP) Server** and the **`decodes-brain` Codebase Prompt Auditor CLI**.
 
 ---
 
-## 🛠️ Published Developer Packages
+## 🔌 1. Decodes Future MCP Server
 
-We support programmatic prompt security auditing directly inside developer workspaces, build tools, and AI agents:
+### What is it?
+The Model Context Protocol (MCP) server acts as a native plugin for AI coding agents. Once installed, it equips tools like **Claude Desktop, Cursor, VS Code, and Windsurf** with security tools. When your AI agent is writing or refactoring system prompts for you, it can programmatically call these tools to check its own work for security flaws!
 
-### 🧠 Codebase Prompt Auditor CLI (`decodes-brain`)
-Audit all hardcoded LLM system prompts in your codebase or CI/CD pipeline in seconds.
+### Supported Agent Tools
+* `scan_prompt`: Audits prompt text for injection risks.
+* `audit_mcp_schema`: Analyzes MCP tool schemas for description poisoning.
+* `diff_prompts`: Compares security posture between original and hardened prompts.
+
+### How to configure it:
+
+#### A. Claude Desktop
+Add this to your Claude Desktop config file (`%APPDATA%\Claude\claude_desktop_config.json`):
+```json
+{
+  "mcpServers": {
+    "decodes-future-security": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@decodesfuture/mcp-server",
+        "--api-key",
+        "YOUR_DECODES_FUTURE_API_KEY"
+      ]
+    }
+  }
+}
+```
+
+#### B. Cursor (IDE)
+1. Open **Cursor Settings** → **Features** → **MCP**.
+2. Click **+ Add New MCP Server**.
+3. Set the details:
+   - **Name**: `decodes-security`
+   - **Type**: `stdio`
+   - **Command**: `npx -y @decodesfuture/mcp-server --api-key YOUR_DECODES_FUTURE_API_KEY`
+4. Click Save. Your AI chat agent can now run audits directly inside your IDE!
+
+---
+
+## 🧠 2. Codebase Prompt Auditor CLI (`decodes-brain`)
+
+### What is it?
+Unlike conversational CLI tools (e.g., Claude Code), `decodes-brain` is a **security crawler utility** built to run inside a codebase directory. 
+1. It crawls your project files (`.py`, `.ts`, `.js`, etc.) recursively.
+2. It detects hardcoded LLM system prompts, system role variables, and explicit prompt annotations (`@decodes-prompt`).
+3. It sends discovered prompts to the scan engine and prints a terminal security audit.
+4. It can gate your deployment pipeline by returning a non-zero exit status if security bugs are found (CI/CD).
+
+### Installation & Usage
 ```bash
+# Initialize decodes-brain.json config in your repo root
 npx decodes-brain init
-npx decodes-brain audit --api-key YOUR_DECODES_KEY
+
+# Scan and audit prompts inside the repo
+npx decodes-brain audit --api-key YOUR_DECODES_FUTURE_API_KEY
 ```
 
-### 🔌 Model Context Protocol Server (`@decodesfuture/mcp-server`)
-Embed prompt security tools directly inside AI coding tools (Cursor, Claude Desktop, VS Code, Windsurf) as a native plugin:
-```bash
-npx @decodesfuture/mcp-server --api-key YOUR_DECODES_KEY
+### CI/CD Integration (GitHub Actions)
+Add this step to your workflows to prevent deploying vulnerable system prompts:
+```yaml
+- name: Audit Prompt Security
+  run: npx decodes-brain audit --api-key ${{ secrets.DECODES_API_KEY }} --fail-on high
 ```
 
 ---
 
-## ⚡ Local Setup & Offline CLI Usage
+## ⚡ 3. Local Setup & Heuristic Firewall
 
 You can run this repository locally to perform fast, zero-dependency heuristic firewalls or programmatically call our Red-Team Cloud API.
 
 ### 1. Installation
-Clone the repository and install the binary link:
 ```bash
 git clone https://github.com/decodesfuture/prompt-injection-scanner.git
 cd prompt-injection-scanner
