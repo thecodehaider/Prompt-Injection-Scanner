@@ -134,7 +134,7 @@ Contact us to discuss on-premise options for high-security environments.
 
 Email us with your use case and expected monthly scan volume:
 
-📧 [thecodehaider@gmail.com](mailto:thecodehaider@gmail.com?subject=White-Label%20Security%20Auditor%20API%20Inquiry&body=Hi%20Decodes%20Future%20Team%2C%0A%0AI'm%20interested%20in%20the%20White-Label%20Security%20Auditor%20API.%0A%0AUse%20case%3A%20%5BDescribe%20your%20use%20case%5D%0AExpected%20monthly%20scans%3A%20%5BYour%20estimate%5D%0ACompany%3A%20%5BYour%20company%5D%0A%0ABest%20regards)
+📧 [thecodehaider@gmail.com](mailto:thecodehaider@gmail.com?subject=White-Label%20Security%20Auditor%20API%20Inquiry&body=Hi%20Quantize%20Lab%20Team%2C%0A%0AI'm%20interested%20in%20the%20White-Label%20Security%20Auditor%20API.%0A%0AUse%20case%3A%20%5BDescribe%20your%20use%20case%5D%0AExpected%20monthly%20scans%3A%20%5BYour%20estimate%5D%0ACompany%3A%20%5BYour%20company%5D%0A%0ABest%20regards)
 
 We typically respond within 1 business day.
 
