@@ -2,7 +2,7 @@
 
 Thank you for your interest in improving the Prompt Injection Scanner.
 
-This repository documents the [Prompt Injection Scanner](https://decodesfuture.com/tools/prompt-scanner) hosted at Decodes Future. Contributions are welcome in the following areas:
+This repository documents the [Prompt Injection Scanner](https://quantizelab.dev/tools/prompt-scanner) hosted at Quantize Lab. Contributions are welcome in the following areas:
 
 ---
 
@@ -51,7 +51,7 @@ Found something wrong with the scanner output, API, or documentation?
 - Keep paragraphs short — max 4 sentences.
 - Use code blocks for all example prompts and payloads.
 - Always include a "Fix" or remediation alongside any attack technique described.
-- Link back to [decodesfuture.com/tools/prompt-scanner](https://decodesfuture.com/tools/prompt-scanner) where relevant.
+- Link back to [quantizelab.dev/tools/prompt-scanner](https://quantizelab.dev/tools/prompt-scanner) where relevant.
 
 ---
 

@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-The hosted Prompt Injection Scanner service at [decodesfuture.com/tools/prompt-scanner](https://decodesfuture.com/tools/prompt-scanner) is continuously maintained and updated.
+The hosted Prompt Injection Scanner service at [quantizelab.dev/tools/prompt-scanner](https://quantizelab.dev/tools/prompt-scanner) is continuously maintained and updated.
 
 ## Reporting a Vulnerability
 
@@ -31,8 +31,8 @@ Instead, report privately via:
 ### Scope
 
 In-scope:
-- The REST API at `www.decodesfuture.com/api/v1/scan`
-- The web application at `www.decodesfuture.com`
+- The REST API at `www.quantizelab.dev/api/v1/scan`
+- The web application at `www.quantizelab.dev`
 - Authentication and authorization issues
 - Data exposure or leakage
 

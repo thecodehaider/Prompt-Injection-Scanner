@@ -93,15 +93,15 @@ export function scanPromptLocal(prompt) {
 }
 
 /**
- * Scan a prompt using the high-accuracy Decodes Future Cloud API.
+ * Scan a prompt using the high-accuracy Quantize Lab Cloud API.
  * @param {string} prompt The prompt text to scan.
- * @param {string} apiKey The Decodes Future API key.
+ * @param {string} apiKey The Quantize Lab API key.
  * @param {string} [host] Optional host override.
  * @returns {Promise<object>} The full red-team audit report.
  */
-export async function scanPromptCloud(prompt, apiKey, host = "https://decodesfuture.com") {
+export async function scanPromptCloud(prompt, apiKey, host = "https://quantizelab.dev") {
   if (!apiKey) {
-    throw new Error("Missing Decodes Future API Key.");
+    throw new Error("Missing Quantize Lab API Key.");
   }
 
   const cleanHost = host.endsWith("/") ? host.slice(0, -1) : host;

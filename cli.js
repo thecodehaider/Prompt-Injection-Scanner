@@ -14,8 +14,8 @@ Usage:
 Options:
   -p, --prompt <text>      The prompt text to audit.
   -c, --cloud              Run deep cloud AI audit (requires API key).
-  -k, --key <value>        Your Decodes Future API Key (or set DECODES_API_KEY env).
-  --host <url>             Override API host (default: https://decodesfuture.com).
+  -k, --key <value>        Your Quantize Lab API Key (or set QUANTIZE_API_KEY env).
+  --host <url>             Override API host (default: https://quantizelab.dev).
   -h, --help               Show this help message.
 `;
 
@@ -35,7 +35,7 @@ async function main() {
               const key = trimmed.substring(0, firstEqual).trim();
               const val = trimmed.substring(firstEqual + 1).trim();
               const cleanVal = val.replace(/^["']|["']$/g, "");
-              if (key === "DECODES_API_KEY" || key === "DECODESFUTURE_API_KEY") {
+              if (key === "QUANTIZE_API_KEY" || key === "QUANTIZELAB_API_KEY") {
                 process.env[key] = cleanVal;
               }
             }
@@ -51,8 +51,8 @@ async function main() {
   const args = process.argv.slice(2);
   let prompt = null;
   let useCloud = false;
-  let apiKey = process.env.DECODES_API_KEY || process.env.DECODESFUTURE_API_KEY;
-  let host = "https://decodesfuture.com";
+  let apiKey = process.env.QUANTIZE_API_KEY || process.env.QUANTIZELAB_API_KEY;
+  let host = "https://quantizelab.dev";
 
   for (let i = 0; i < args.length; i++) {
     if ((args[i] === "--prompt" || args[i] === "-p") && args[i + 1]) {
@@ -86,7 +86,7 @@ async function main() {
   if (useCloud) {
     console.log("🌐 Running deep Cloud red-team scan...");
     if (!apiKey) {
-      console.error("Error: Cloud scanning requires an API Key (--key or DECODES_API_KEY env).");
+      console.error("Error: Cloud scanning requires an API Key (--key or QUANTIZE_API_KEY env).");
       process.exit(1);
     }
 

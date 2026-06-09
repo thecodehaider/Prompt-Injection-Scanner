@@ -8,7 +8,7 @@ Build prompt security auditing directly into your consultancy or SaaS platform �
 
 ## What Is the White-Label API?
 
-The White-Label Security Auditor API is an enterprise tier of the Prompt Injection Scanner that lets you embed our scanning engine inside your own products and client offerings — with **zero Decodes Future branding**.
+The White-Label Security Auditor API is an enterprise tier of the Prompt Injection Scanner that lets you embed our scanning engine inside your own products and client offerings — with **zero Quantize Lab branding**.
 
 Your clients see your brand. We power the intelligence underneath.
 
@@ -34,8 +34,8 @@ Run automated prompt audits as part of your internal AI governance workflow. Gat
 
 | Feature | Details |
 |---|---|
-| **Dedicated endpoint** | Your own isolated scanning endpoint at `api.decodesfuture.com/white-label/{your-id}/scan` |
-| **Custom branding** | All references to Decodes Future removed from API responses and reports |
+| **Dedicated endpoint** | Your own isolated scanning endpoint at `api.quantizelab.dev/white-label/{your-id}/scan` |
+| **Custom branding** | All references to Quantize Lab removed from API responses and reports |
 | **White-labeled reports** | PDF audit reports with your logo, company name, and color scheme |
 | **Custom rate limits** | Negotiated SLA — from 10,000 to 1,000,000+ scans/month |
 | **Dedicated compute** | Isolated inference queue — your scans never share resources with other customers |
@@ -74,7 +74,7 @@ Enterprise includes dedicated compute, custom SLA, and volume pricing for very h
 The white-label endpoint is identical to the standard API. Just replace the base URL and use your white-label key:
 
 ```bash
-curl -X POST https://decodesfuture.com/api/white-label/{your-id}/scan \
+curl -X POST https://quantizelab.dev/api/white-label/{your-id}/scan \
   -H "x-api-key: YOUR_WHITE_LABEL_KEY" \
   -H "Content-Type: application/json" \
   -d '{"prompt": "Your system prompt here"}'
@@ -99,7 +99,7 @@ Each scan can generate a branded PDF report containing:
 PDF generation endpoint:
 
 ```bash
-curl -X POST https://decodesfuture.com/api/white-label/{your-id}/scan/report \
+curl -X POST https://quantizelab.dev/api/white-label/{your-id}/scan/report \
   -H "x-api-key: YOUR_WHITE_LABEL_KEY" \
   -H "Content-Type: application/json" \
   -d '{"prompt": "...", "format": "pdf", "client_name": "Acme Corp"}' \
@@ -140,4 +140,4 @@ We typically respond within 1 business day.
 
 ---
 
-**[Back to Main README](../README.md)** · **[API Reference](./api-reference.md)** · **[Pricing](https://decodesfuture.com/pricing)**
+**[Back to Main README](../README.md)** · **[API Reference](./api-reference.md)** · **[Pricing](https://quantizelab.dev/pricing)**

@@ -2,9 +2,9 @@
 
 Complete reference for the Prompt Injection Scanner REST API.
 
-**Base URL**: `https://www.decodesfuture.com/api/v1`
+**Base URL**: `https://www.quantizelab.dev/api/v1`
 
-**[Get your API key →](https://www.decodesfuture.com/pricing)**
+**[Get your API key →](https://www.quantizelab.dev/pricing)**
 
 ---
 
@@ -16,7 +16,7 @@ All API requests require an API key passed in the request header:
 x-api-key: your_api_key_here
 ```
 
-Generate your key from your profile at [decodesfuture.com/profile](https://www.decodesfuture.com/profile) under the **API Gateway** tab. Requires a **Pro** or **Team** plan.
+Generate your key from your profile at [quantizelab.dev/profile](https://www.quantizelab.dev/profile) under the **API Gateway** tab. Requires a **Pro** or **Team** plan.
 
 ---
 
@@ -27,7 +27,7 @@ Runs a full prompt injection security audit on a given system prompt.
 
 #### Request
 **Method**: `POST`  
-**URL**: `https://www.decodesfuture.com/api/v1/scan`  
+**URL**: `https://www.quantizelab.dev/api/v1/scan`  
 **Content-Type**: `application/json`
 
 ##### Body Parameters
@@ -37,7 +37,7 @@ Runs a full prompt injection security audit on a given system prompt.
 
 ##### Example Request
 ```bash
-curl -X POST https://www.decodesfuture.com/api/v1/scan \
+curl -X POST https://www.quantizelab.dev/api/v1/scan \
   -H "x-api-key: YOUR_KEY" \
   -H "Content-Type: application/json" \
   -d '{"prompt": "You are a helpful AI assistant. Answer the user truthfully."}'
@@ -70,7 +70,7 @@ Performs a rigorous security audit on an MCP tool schema or description to find 
 
 #### Request
 **Method**: `POST`  
-**URL**: `https://www.decodesfuture.com/api/v1/mcp-audit`  
+**URL**: `https://www.quantizelab.dev/api/v1/mcp-audit`  
 **Content-Type**: `application/json`
 
 ##### Body Parameters
@@ -80,7 +80,7 @@ Performs a rigorous security audit on an MCP tool schema or description to find 
 
 ##### Example Request
 ```bash
-curl -X POST https://www.decodesfuture.com/api/v1/mcp-audit \
+curl -X POST https://www.quantizelab.dev/api/v1/mcp-audit \
   -H "x-api-key: YOUR_KEY" \
   -H "Content-Type: application/json" \
   -d '{"schema": "{\"name\": \"run_cmd\", \"description\": \"Execute command line tasks\"}"}'
@@ -109,7 +109,7 @@ Rewrites system prompts into hardened, injection-resistant, production-grade ver
 
 #### Request
 **Method**: `POST`  
-**URL**: `https://www.decodesfuture.com/api/v1/harden`  
+**URL**: `https://www.quantizelab.dev/api/v1/harden`  
 **Content-Type**: `application/json`
 
 ##### Body Parameters
@@ -119,7 +119,7 @@ Rewrites system prompts into hardened, injection-resistant, production-grade ver
 
 ##### Example Request
 ```bash
-curl -X POST https://www.decodesfuture.com/api/v1/harden \
+curl -X POST https://www.quantizelab.dev/api/v1/harden \
   -H "x-api-key: YOUR_KEY" \
   -H "Content-Type: application/json" \
   -d '{"prompt": "You are a helpful assistant."}'
@@ -142,4 +142,4 @@ curl -X POST https://www.decodesfuture.com/api/v1/harden \
 | **Pro** | Unlimited | Unlimited | ✅ | 500 calls/mo | **$14.99/mo** |
 | **Team** | Unlimited | Unlimited | ✅ | Unlimited | **$49.99/mo** |
 
-→ **[Get API key & Upgrade plans](https://decodesfuture.com/pricing)**
+→ **[Get API key & Upgrade plans](https://quantizelab.dev/pricing)**

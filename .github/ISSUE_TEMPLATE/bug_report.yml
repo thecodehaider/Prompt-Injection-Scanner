@@ -23,7 +23,7 @@ body:
       label: "Steps to reproduce"
       description: "What did you do to trigger this?"
       placeholder: |
-        1. Go to https://decodesfuture.com/tools/prompt-scanner
+        1. Go to https://quantizelab.dev/tools/prompt-scanner
         2. Paste prompt: "..."
         3. Click INITIALIZE_SCAN
         4. See error: "..."

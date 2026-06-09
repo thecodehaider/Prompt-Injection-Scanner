@@ -1,6 +1,6 @@
 # Prompt Hardening Guide
 
-A practical reference for writing system prompts that resist prompt injection attacks. Every technique here is tested by the [Prompt Injection Scanner](https://decodesfuture.com/tools/prompt-scanner).
+A practical reference for writing system prompts that resist prompt injection attacks. Every technique here is tested by the [Prompt Injection Scanner](https://quantizelab.dev/tools/prompt-scanner).
 
 ---
 
@@ -186,7 +186,7 @@ AGENT SECURITY RULES:
 
 After hardening, verify your work by running it through the scanner:
 
-**[→ Free scan at decodesfuture.com/tools/prompt-scanner](https://decodesfuture.com/tools/prompt-scanner)**
+**[→ Free scan at quantizelab.dev/tools/prompt-scanner](https://quantizelab.dev/tools/prompt-scanner)**
 
 A well-hardened prompt should score below **30/100**. The scanner will tell you exactly what's still exploitable.
 
@@ -214,4 +214,4 @@ Before deploying any LLM application to production, verify:
 - [Full Attack Vector Reference](./attack-vectors.md)
 - [API Reference](./api-reference.md)
 - [OWASP LLM Top 10 2025](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
-- [Live Scanner](https://decodesfuture.com/tools/prompt-scanner)
+- [Live Scanner](https://quantizelab.dev/tools/prompt-scanner)
