@@ -91,10 +91,10 @@ Unlike conversational CLI tools (e.g., Claude Code), `quantize-brain` is a **sec
 ### Installation & Usage
 ```bash
 # Initialize quantize-brain.json config in your repo root
-npx quantize-brain init
+npx @quantizelab/quantize-brain init
 
 # Scan and audit prompts inside the repo (Key is automatically read from local .env)
-npx quantize-brain audit
+npx @quantizelab/quantize-brain audit
 ```
 
 > [!TIP]
@@ -104,7 +104,7 @@ npx quantize-brain audit
 Add this step to your workflows to prevent deploying vulnerable system prompts:
 ```yaml
 - name: Audit Prompt Security
-  run: npx quantize-brain audit
+  run: npx @quantizelab/quantize-brain audit
   env:
     QUANTIZE_API_KEY: ${{ secrets.QUANTIZE_API_KEY }}
 ```
