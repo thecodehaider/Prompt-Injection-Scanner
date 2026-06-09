@@ -34,7 +34,7 @@
 
 The **Prompt Injection Scanner** is a production-grade security auditing engine for LLM system prompts. It combines a fast heuristic firewall with a deep AI-powered red-team audit layer — all mapped to the **OWASP LLM Top 10 2025** framework.
 
-This repository supports local heuristic scanning, programmatic SDK operations, and wraps our advanced developer tools: the **Model Context Protocol (MCP) Server** and the **`decodes-brain` Codebase Prompt Auditor CLI**.
+This repository supports local heuristic scanning, programmatic SDK operations, and wraps our advanced developer tools: the **Model Context Protocol (MCP) Server** and the **`quantize-brain` Codebase Prompt Auditor CLI**.
 
 ---
 
@@ -55,13 +55,13 @@ Add this to your Claude Desktop config file (`%APPDATA%\Claude\claude_desktop_co
 ```json
 {
   "mcpServers": {
-    "decodes-future-security": {
+    "quantize-security": {
       "command": "npx",
       "args": [
         "-y",
         "@quantizelab/mcp-server",
         "--api-key",
-        "YOUR_DECODES_FUTURE_API_KEY"
+        "YOUR_QUANTIZE_API_KEY"
       ]
     }
   }
@@ -72,29 +72,29 @@ Add this to your Claude Desktop config file (`%APPDATA%\Claude\claude_desktop_co
 1. Open **Cursor Settings** → **Features** → **MCP**.
 2. Click **+ Add New MCP Server**.
 3. Set the details:
-   - **Name**: `decodes-security`
+   - **Name**: `quantize-security`
    - **Type**: `stdio`
-   - **Command**: `npx -y @quantizelab/mcp-server --api-key YOUR_DECODES_FUTURE_API_KEY`
+   - **Command**: `npx -y @quantizelab/mcp-server --api-key YOUR_QUANTIZE_API_KEY`
 4. Click Save. Your AI chat agent can now run audits directly inside your IDE!
 
 ---
 
-## 🧠 2. Codebase Prompt Auditor CLI (`decodes-brain`)
+## 🧠 2. Codebase Prompt Auditor CLI (`quantize-brain`)
 
 ### What is it?
-Unlike conversational CLI tools (e.g., Claude Code), `decodes-brain` is a **security crawler utility** built to run inside a codebase directory. 
+Unlike conversational CLI tools (e.g., Claude Code), `quantize-brain` is a **security crawler utility** built to run inside a codebase directory. 
 1. It crawls your project files (`.py`, `.ts`, `.js`, etc.) recursively.
-2. It detects hardcoded LLM system prompts, system role variables, and explicit prompt annotations (`@decodes-prompt`).
+2. It detects hardcoded LLM system prompts, system role variables, and explicit prompt annotations (`@quantize-prompt`).
 3. It sends discovered prompts to the scan engine and prints a terminal security audit.
 4. It can gate your deployment pipeline by returning a non-zero exit status if security bugs are found (CI/CD).
 
 ### Installation & Usage
 ```bash
-# Initialize decodes-brain.json config in your repo root
-npx decodes-brain init
+# Initialize quantize-brain.json config in your repo root
+npx quantize-brain init
 
 # Scan and audit prompts inside the repo (Key is automatically read from local .env)
-npx decodes-brain audit
+npx quantize-brain audit
 ```
 
 > [!TIP]
@@ -104,7 +104,7 @@ npx decodes-brain audit
 Add this step to your workflows to prevent deploying vulnerable system prompts:
 ```yaml
 - name: Audit Prompt Security
-  run: npx decodes-brain audit
+  run: npx quantize-brain audit
   env:
     QUANTIZE_API_KEY: ${{ secrets.QUANTIZE_API_KEY }}
 ```
