@@ -1,5 +1,5 @@
 {
-  "name": "prompt-injection-scanner",
+  "name": "@quantizelab/prompt-injection-scanner",
   "version": "1.0.0",
   "description": "Zero-dependency local prompt injection heuristic scanner and cloud API wrapper",
   "main": "index.js",
